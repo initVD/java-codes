@@ -7,7 +7,7 @@
 	
 	static {
 		dept="management";
-	}
+}
 	Student(int p,String nm, double pr)
 	{
 		prn=p;
