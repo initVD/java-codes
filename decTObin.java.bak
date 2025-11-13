@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class decTObin
+{
+	public static void main (String [] args)
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("THIS IS PROGRAM FOR CONVERT DECIMAL NUMBER INTO BINARY NUMBER ");
+		System.out.println("enter decimal number: ");
+		int decimal = sc.nextInt();
+		System.out.println("choose conversion method: ");
+		System.out.println("1. bult-in method: ");
+		System.out.println("2. manual method: ");
+		System.out.println("3. enter your_Choice: ");
+		int choice = sc.nextInt();
+			
+		String binary= "";
+		switch(choice){
+			case 1 :
+				//built-in
+			binary = Integer.toBinaryString(decimal);
+			System.out.println("Binary (built-in method): "+ binary);
+			break;
+			
+			case 2:
+				//manual
+			if (decimal == 0)
+			{
+				binary = "0";
+			}else{
+				int num = decimal;
+				while (num>0)
+				{
+					int rem = num% 2;
+					binary = rem + binary;
+					num = num / 2;
+				}
+				
+			}
+			
+			System.out.println("binary (manual method): " +binary);
+			break;
+			
+			
+	default:
+		System.out.println("Invalid choice. please enter 1 or 2.");
+		
+		
+		
+		}
+		
+	}
+}

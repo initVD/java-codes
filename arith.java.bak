@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+ class arith {
+    public static void main(String[] args) {
+        int operator;
+        double n1, n2, result = 0;
+
+        System.out.println("1. Addition\n2. Subtraction\n3. Division\n4. Multiplication\n5. Remainder");
+        System.out.println("Enter your choice:");
+        
+        Scanner sc = new Scanner(System.in);
+        operator = sc.nextInt();
+
+        System.out.println("Enter first number: ");
+        n1 = sc.nextDouble(); // FIXED typo: netxInt -> nextDouble
+
+        System.out.println("Enter second number: ");
+        n2 = sc.nextDouble(); // changed to nextDouble to match 'double' type
+
+        switch (operator) {
+            case 1:
+                result = n1 + n2;
+                break;
+
+            case 2:
+                result = n1 - n2;
+                break;
+
+            case 3:
+                if (n2 != 0)
+                    result = n1 / n2;
+                else {
+                    System.out.println("Division by zero is not allowed.");
+                    return;
+                }
+                break;
+
+            case 4:
+                result = n1 * n2;
+                break;
+
+            case 5:
+                if (n2 != 0)
+                    result = n1 % n2;
+                else {
+                    System.out.println("Modulo by zero is not allowed.");
+                    return;
+                }
+                break;
+
+            default:
+                System.out.println("Invalid choice!");
+                return;
+        }
+
+        System.out.println("Result is: " + result);
+    }
+}

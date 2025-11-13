@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class binTodec {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("THIS IS A PROGRAM TO CONVERT A BINARY NUMBER INTO A DECIMAL NUMBER");
+        System.out.print("Enter the binary number (only 0 and 1): ");
+        String binaryStr = sc.next();
+
+        // Check if valid binary
+        if (!binaryStr.matches("[01]+")) {
+            System.out.println("Invalid number. Only 0 and 1 are allowed.");
+            return;
+        }
+
+        System.out.println("Choose conversion method:");
+        System.out.println("1. Built-in method");
+        System.out.println("2. Manual method");
+        System.out.print("Enter your choice: ");
+        int choice = sc.nextInt();
+
+        int decimal = 0;
+
+        switch (choice) {
+            case 1:
+                // Built-in method
+                decimal = Integer.parseInt(binaryStr, 2);
+                System.out.println("Decimal (built-in method): " + decimal);
+                break;
+
+            case 2:
+                // Manual method
+                int power = 0;
+                for (int i = binaryStr.length() - 1; i >= 0; i--) {
+                    int bit = binaryStr.charAt(i) - '0';
+                    decimal += bit * (int)Math.pow(2, power);
+                    power++;
+                }
+                System.out.println("Decimal (manual method): " + decimal);
+                break;
+
+            default:
+                System.out.println("Invalid choice. Please enter 1 or 2.");
+        }
+
+        sc.close();
+    }
+}

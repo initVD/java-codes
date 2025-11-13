@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class avg
+{
+	public static void main (String [] args)
+	{
+		double n1,n2,n3,n4,n5;
+		double result;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		result = sc.nextDouble();
+		System.out.println("enter first number: ");
+		n1 = sc.nextDouble();
+		System.out.println("enter second number: ");
+		n2 = sc.nextDouble();
+		System.out.println("enter third number: ");
+		n3 = sc.nextDouble();
+		System.out.println("enter forth number: ");
+		n4 = sc.nextDouble();
+		System.out.println("enter fifth number: ");
+		n5 = sc.nextDouble();
+		result = (n1+n2+n3+n4+n5)/5;
+		
+		System.out.println("Average is : " + result);
+		
+	}
+}
